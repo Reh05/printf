@@ -24,7 +24,6 @@ int _printf(const char *format, ...)
 					*(format + 1) == '%'))
 		{
 			format++;
-
 			switch (*format)
 			{
 				case 'c':
@@ -57,6 +56,6 @@ int _printf(const char *format, ...)
 			len += write(STDOUT_FILENO, format, 1);
 		format++;
 	}
-
+	va_end(ap);
 	return (len);
 }
