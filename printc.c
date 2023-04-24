@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <unistd.h>
 /**
   * printc - prints character
@@ -5,7 +6,10 @@
   *
   * Return: Returns number of chars printed
   */
-int printc(int num)
+int printc(int c)
 {
-	return (write(1, &num, 1));
+	int ret = (write(STDOUT_FILENO, &c, 1));
+	if (ret == -1)
+		perror("write");
+	return (ret);
 }
