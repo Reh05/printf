@@ -8,20 +8,29 @@
  *
  * Return: Returns the number of strings printed
  */
-int print_string(char *str)
+ssize_t print_string(const char *str)
 {
-	int len = 0;
-	int i = 0;
-	char *null_string = "(null)";
+	const char *null_string = "null";
+	ssize_t len = 0;
+	ssize_t ret;
 
 	if (str == NULL)
-		return (print_string(null_string));
-
-	while (str[i] != '\0')
 	{
-		len += write(1, &str[i], 1);
-		i++;
+		str = null_string;
 	}
-
+	while (*str != '\0')
+	{
+		ret = write(STDOUT_FILENO, str++, 1);
+		if (ret == -1)
+		{
+			return (-1);
+		}
+		len += ret;
+	}
+	if (ret == -1)
+	{
+		return (-1);
+	}
+	len += ret;
 	return (len);
 }
