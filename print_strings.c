@@ -32,5 +32,5 @@ ssize_t print_string(const char *str)
 		return (-1);
 	}
 	len += ret;
-	return (len);
+	return (len - 1);
 }
