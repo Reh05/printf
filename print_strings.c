@@ -10,7 +10,7 @@
  */
 ssize_t print_string(const char *str)
 {
-	const char *null_string = "null";
+	const char *null_string = "(null)";
 	ssize_t len = 0;
 	ssize_t ret;
 
