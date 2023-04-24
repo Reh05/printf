@@ -12,9 +12,10 @@ int print_string(char *str)
 {
 	int len = 0;
 	int i = 0;
+	char *null_string = "(null)";
 
 	if (str == NULL)
-		return (0);
+		return (print_string(null_string));
 
 	while (str[i] != '\0')
 	{
