@@ -19,7 +19,9 @@ int _printf(const char *format, ...)
 
 	while (*format != '\0')
 	{
-		if (*format == '%')
+		if (*format == '%' && (*(format + 1) == 'c' ||
+					*(format + 1) == 's' ||
+					*(format + 1) == '%'))
 		{
 			format++;
 
@@ -37,6 +39,11 @@ int _printf(const char *format, ...)
 						char *value = va_arg(ap, char *);
 
 						len += print_string(value);
+						break;
+					}
+				case '%':
+					{
+						len += printc('%');
 						break;
 					}
 				default:
