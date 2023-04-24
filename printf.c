@@ -29,25 +29,25 @@ int _printf(const char *format, ...)
 					{
 						char value = va_arg(ap, int);
 
-						len = printc(value);
+						len += printc(value);
 						break;
 					}
 				case 's':
 					{
 						char *value = va_arg(ap, char *);
 
-						len = print_string(value);
+						len += print_string(value);
 						break;
 					}
 				default:
 					{
-						len = write(STDOUT_FILENO, format, 1);
+						len += write(STDOUT_FILENO, format, 1);
 						break;
 					}
 			}
 		}
 		else
-			len = write(STDOUT_FILENO, format, 1);
+			len += write(STDOUT_FILENO, format, 1);
 		format++;
 	}
 
