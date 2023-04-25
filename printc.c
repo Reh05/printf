@@ -9,7 +9,5 @@ int printc(int c)
 {
 	int ret = (write(STDOUT_FILENO, &c, 1));
 
-	if (ret == -1)
-		perror("write");
 	return (ret);
 }
