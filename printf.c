@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 						break;
 				case 'i':
 				case 'd':
-						len += print_num(va_arg(ap, int));
+						len += print_num(va_arg(ap, long int));
 						break;
 				case '%':
 						len += printc('%');
