@@ -5,7 +5,7 @@
   *
   * Return: Returns number of chars printed
   */
-int printc(int c)
+int printc(const int c)
 {
 	int ret = (write(STDOUT_FILENO, &c, 1));
 
