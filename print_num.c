@@ -9,27 +9,35 @@
  *
  * Return: Returns the number of numbers printed
  */
-int print_num(int num)
+int print_num(long int num)
 {
 	char str[20];
 	int i = 0;
 	int count = 0;
+	char c = '-';
 
 	if (num < 0)
 	{
-		str[i++] = '-';
+		write(1, &c, 1);
+		count++;
 		num = -num;
+	}
+	else if (num == 0)
+	{
+		str[i++] = '0';
 		count++;
 	}
-	do {
-		str[i++] = num % 10 + '0';
+
+	while (num > 0)
+	{
+		str[i++] = (num % 10) + '0';
 		num /= 10;
-		count++;
-	} while (num > 0);
+	}
 
 	while (i > 0)
 	{
-		write(1, &str[--i], 1);
+		write(STDOUT_FILENO, &str[--i], 1);
+		count++;
 	}
 	return (count);
 }
