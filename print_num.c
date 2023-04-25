@@ -1,11 +1,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "main.h"
-/** This file contains functions that prints numbers **/
-
 /**
- * print_num - prints a given string
- * @num: string to be printed
+ * print_num - prints a given number
+ * @num: number to be printed
  *
  * Return: Returns the number of numbers printed
  */
