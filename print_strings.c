@@ -8,11 +8,11 @@
  *
  * Return: Returns the number of strings printed
  */
-ssize_t print_string(const char *str)
+int print_string(const char *str)
 {
 	const char *null_string = "(null)";
-	ssize_t len = 0;
-	ssize_t ret;
+	int len = 0;
+	int ret;
 
 	if (str == NULL)
 	{
