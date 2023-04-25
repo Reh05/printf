@@ -28,9 +28,9 @@ int _printf(const char *format, ...)
 				case 's':
 						len += print_string(va_arg(ap, char *));
 						break;
-				case 'd':
-						break;
 				case 'i':
+				case 'd':
+						len += print_num(va_arg(ap, int));
 						break;
 				case '%':
 						len += printc('%');
