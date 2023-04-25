@@ -13,7 +13,6 @@ int _printf(const char *format, ...)
 	int len = 0;
 
 	va_start(ap, format);
-
 	if (format == NULL)
 		return (-1);
 	while (*format != '\0')
@@ -36,6 +35,8 @@ int _printf(const char *format, ...)
 				case '%':
 						len += printc('%');
 						break;
+				case '\0':
+						return (-1);
 				default:
 						len += printc('%');
 						len += write(STDOUT_FILENO, &(*format), 1);
@@ -46,6 +47,5 @@ int _printf(const char *format, ...)
 			len += write(STDOUT_FILENO, &(*format), 1);
 		format++;
 	}
-	va_end(ap);
 	return (len);
 }
