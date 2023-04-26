@@ -25,5 +25,6 @@ int _printf(const char *format, ...)
 			len += write(STDOUT_FILENO, &(*format), 1);
 		format++;
 	}
+	va_end(ap);
 	return (len);
 }
