@@ -8,8 +8,8 @@
  */
 int int_to_binary(unsigned int num)
 {
-	int rem = 0, array_size = 0, *binary, count = 0;
-	int temp = num;
+	int rem = 0, array_size = 0, count = 0;
+	unsigned int temp = num, *binary;
 
 	if (num == 0)
 	{
@@ -21,7 +21,7 @@ int int_to_binary(unsigned int num)
 		array_size++;
 		temp /= 2;
 	}
-	binary = malloc(sizeof(int) * array_size);
+	binary = malloc(sizeof(unsigned int) * array_size);
 	rem = array_size - 1;
 	while (rem >= 0)
 	{
