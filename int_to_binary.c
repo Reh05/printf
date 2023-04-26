@@ -13,8 +13,8 @@ int int_to_binary(unsigned int num)
 
 	if (num == 0)
 	{
-		count += printc(num);
-		return (count);
+		count += printc(num + '0');
+		return (1);
 	}
 	while (temp != 0)
 	{
