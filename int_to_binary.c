@@ -11,7 +11,7 @@ int int_to_binary(unsigned int num)
 	int rem = 0, array_size = 0, count = 0;
 	unsigned int temp = num, *binary;
 
-	if (num == 0)
+	if (num == 0 || num == 1)
 	{
 		count += printc(num + '0');
 		return (1);
@@ -22,6 +22,8 @@ int int_to_binary(unsigned int num)
 		temp /= 2;
 	}
 	binary = malloc(sizeof(unsigned int) * array_size);
+	if (binary == NULL)
+		return (-1);
 	rem = array_size - 1;
 	while (rem >= 0)
 	{
