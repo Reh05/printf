@@ -23,7 +23,6 @@ int print_num(long int num)
 	else if (num == 0)
 	{
 		str[i++] = '0';
-		count++;
 	}
 
 	while (num > 0)
